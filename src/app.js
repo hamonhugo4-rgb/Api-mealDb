@@ -1,5 +1,5 @@
 import express from 'express';
-
+import repasRoute from './routes/repas.routes.js';
 import cors from 'cors'
 const app = express()
 app.use(cors())
@@ -9,7 +9,7 @@ app.get('/health',(req,res)=>{
     })
 })
 
-
+app.use('/Api/repas/',repasRoute)
 
 app.use((req,res)=>{
     res.status(404).json({erreur:"Route introuvable"})
