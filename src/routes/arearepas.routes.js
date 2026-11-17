@@ -15,7 +15,7 @@ router.get('/:pays', async (req, res) => {
     const resultat = repas.filter((plat) => plat.pays && plat.pays.toLowerCase() === recherche)
 
     if (resultat.length === 0) {
-        return res.status(404).json({ message: `Aucun plat trouvé pour : ${req.params.pays}` })
+        return res.status(404).json({ message: `Aucun plat trouvé pour : ${req.params.pays} essayer de mettre la nationalité plutot que le pays` })
     }
 
     res.json(resultat)
